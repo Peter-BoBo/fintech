@@ -108,6 +108,7 @@ WHERE Survived = 1;
 #생존자/사망자의 나이 평균은 별칭을 avg_age로 하시오.
 #못 풀었슴다...
 
+USE titanic
 SELECT Sex, Pclass, Survived is_survivred, count(Survived) survived_total , Avg(Age) avg_age FROM passenger p 
 INNER JOIN ticket t ON p.PassengerId = t.PassengerId 
 INNER JOIN survived s ON p.PassengerId = s.PassengerId
