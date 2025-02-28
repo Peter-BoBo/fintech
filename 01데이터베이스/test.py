@@ -1,6 +1,2 @@
-print("Hello! " * 3)
-
-
-
-
-
+import keyword
+print(keyword.kwlits)

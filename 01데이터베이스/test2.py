@@ -1,1 +1,1 @@
-python hello.py
+1 + 10
