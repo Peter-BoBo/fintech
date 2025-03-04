@@ -121,10 +121,10 @@ GROUP BY department_name;
 # 문제 10
 # 2016년 11월 시작하는 과목을 수강하는 학생의 이름과 수강과목을 출력하세요.
 
-SELECT * FROM student s 
-RIGHT JOIN student_course sc
+SELECT student_name, course_name FROM student s 
+INNER JOIN student_course sc
 ON s.student_id = sc.student_id
-RIGHT JOIN course c
+INNER JOIN course c
 ON sc.course_id = c.course_id
 WHERE start_date > '2016-11-01';
 
@@ -142,9 +142,9 @@ WHERE course_name = '데이터베이스 입문';
 
 # 문제 12
 # '빌게이츠' 교수의 과목을 수강신청한 학생수는
-SELECT student_id, count(student_id) FROM student s
-LEFT JOIN department d
-ON s.department_id = d.department_id
-LEFT JOIN professor p
-ON s.department_id = p.department_id;
-WHERE professor_name = 
+
+select count(*) from student s LEFT JOIN student_course sc
+ON s.student_id=sc.student_id 
+where course_id=(select course_id from professor p LEFT JOIN course c
+on p.professor_id = c.professor_id
+where professor_name='빌게이츠');
