@@ -40,10 +40,9 @@ p + ul {
 
 
 /* 일반 형제 셀렉터 (셀렉터A ~ 셀렉터B) */
-
-/* span ~ ul {
+span ~ ul {
     color: green;
-} */
+}
 
 /* 가상 클래스 셀렉터 Pseudo-class selector */
 /* 요소의 특정 상태에 따라 스타일을 정의할 때 사용 */
@@ -51,14 +50,6 @@ p + ul {
 포커스가 들어와 있을 때 (마우스 커서 깜빡깜빡) */
 /* Crawling 할 때 가장 어려운 요소가 '가상 클래스 셀렉터' */
 
-a:hover {
-    background-color: red;
-}
-
-
-input:focus {
-    background-color: yellow;
-}
 
 /* 링크 셀렉터  */
 /* :link 셀렉터가 방문하지 않은 링크일 때 
@@ -67,6 +58,15 @@ input:focus {
    :active 셀렉터가 클릭된 상태일 때
    :focus 셀렉터에 포커스가 들어와 있을 때
 */
+
+a:hover {
+    background-color: green;
+}
+
+
+input:focus {
+    background-color: yellow;
+}
 
 a:link {
     color: orange;
@@ -89,8 +89,9 @@ input[type="password"]:focus {
 }
 
 /* 구조 가상 클래스 셀렉터 
-   :first-child - 셀렉터에 해당하는 모든 요소 중 첫반째 자식인 요소를 선택
-   :last-child - 셀럭터에 해당하는 모든 요소 중 마지막 자식인 요소를 선택 */
+여러 개의 목록이 있을 때, 특정 위치에 있는 요소를 찾고 싶을 때
+    :first-child - 셀렉터에 해당하는 모든 요소 중 첫반째 자식인 요소를 선택
+    :last-child - 셀럭터에 해당하는 모든 요소 중 마지막 자식인 요소를 선택 */
 
 p:first-child {
     color: red;
@@ -116,17 +117,17 @@ ol > li:nth-child(2n+1) {
 }
 
 /* ol의 li 중에서 첫번째 요소만 선택 */
-ol > li:first-child{
+ol > li:first-child {
     color: red;
 }
 
 /* ol의 li 중에서 마지막 요소만 선택 */
-ol > li:last-child{
+ol > li:last-child {
     color: blue;
 }
 
 /* ol의 li 중에서 4번째 요소만 선택 */
-ol > li:nth-child(4){
+ol > li:nth-child(4) {
     background-color: brown;
 }
 
