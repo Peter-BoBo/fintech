@@ -62,11 +62,12 @@ aside > h2 {
 /* 11	클래스 review의 첫 번째 <p> 글자색을 보라색으로 설정하세요. */
 
 .review:first-of-type p
-/* class review 中 첫 번째 요소를 찾고, 해당 첫 번째 요소의 후손 p를 찾으라는 의미이다. */
  {
   color: purple;
 }
 
+
+/* class review 中 첫 번째 요소를 찾고, 해당 첫 번째 요소의 후손 p를 찾으라는 의미이다. */
 
 /* 12	<footer> 안 <a> 태그 글자색을 초록색으로 설정하세요. */
 

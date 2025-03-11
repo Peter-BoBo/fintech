@@ -133,5 +133,3 @@ section:nth-of-type(4) article{
 .bar:nth-child(5){
     transition-timing-function: ease-in-out;
 }
-
-/*  */
