@@ -528,5 +528,5 @@ div.twoinone {
 
 /* 100%에 가까울 수록 갈색 톤으로 변경됨 */
 .filter div:nth-child(8) {
-    filter: sepia(100%);
-  }
+  filter: sepia(100%);
+}
