@@ -3,6 +3,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 import pandas as pd
 from datetime import datetime
+import time
 
 def year_month():
     today = datetime.today()
@@ -33,6 +34,7 @@ def to_stock_db(idx, stock_code, stock_name, df):
     year, month = year_month()
     # Database 쿼리창 오픈
     conn = dbconnect()
+    time.sleep(1)
     df.to_sql(f'stock_price_{year}_{month:02d}', con=conn, if_exists="append", index=False)
     conn.close()
     print(f"{idx+1}/{len(stock_code)} {stock_name}DB저장 완료", end = "\r" )
