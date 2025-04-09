@@ -3,7 +3,6 @@ import pymysql
 pymysql.install_as_MySQLdb()
 import pandas as pd
 from datetime import datetime
-import time
 
 def year_month():
     today = datetime.today()
@@ -25,19 +24,17 @@ def stock_codes():
     stock_code = data['종목코드'].apply(lambda x: x+"0")
     return stock_code
 
+
 def to_stock_db(idx, stock_code, stock_name, df):
     """
-    idx, stock_code, stock_name, df를 입력받아
+    idx, stock_code, stock_name, df 를 입력받아
     stock_price_{year}_{month:02d} 형식의 테이블을 mysql에 저장
     """
     # 오늘기준 연도, 달 출력
     year, month = year_month()
     # Database 쿼리창 오픈
     conn = dbconnect()
-    time.sleep(1)
-    df.to_sql(f'stock_price_{year}_{month:02d}', con=conn, if_exists="append", index=False)
+    df.to_sql(f'stock_price_{year}_{month:02d}', con=conn,  if_exists="append", index=False)
     conn.close()
-    print(f"{idx+1}/{len(stock_code)} {stock_name}DB저장 완료", end = "\r" )
-    return
-
-   
+    print(f"{idx}/{len(stock_code)-1} {stock_name}DB 저장 완료", end="\r")
+    return 
