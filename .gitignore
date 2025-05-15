@@ -2,6 +2,9 @@
 data/
 dist/
 build/
+model/
 *.json
 *.csv
 *.exe
+*.keras
+*.joblib
