@@ -12,3 +12,4 @@ catanddog/
 *.jpg
 *.png
 *.Trash-0/
+*.env*
